@@ -1,11 +1,29 @@
 {
-    "name": "app-service-hello-world",
-    "description": "Simple Hello World Node.js sample for Azure App Service",
-    "version": "0.0.1",
-    "private": true,
-    "license": "MIT",
-    "author": "Microsoft",
-    "scripts": {
-        "start": "node index.js"
-    }
+  "name": "gh-status-example",
+  "description": "An example of using the github status api",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "email": "michael.l.north@gmail.com",
+    "name": "Mike North",
+    "url": "https://mike.works"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node js/index.js",
+    "start:watch": "yarn nodemon",
+    "watch": "concurrently -n build,serve -c bgGreen.black,bgYellow.black \"npm:build:watch\" \"npm:start:watch\""
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.6.8",
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
